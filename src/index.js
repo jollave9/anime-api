@@ -5,7 +5,12 @@ const host = 'https://my-ani-api.herokuapp.com'
 
 // scrape kitsu
 const get_anime_info = async (title) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args': [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
     const page = await browser.newPage();
     await page.goto(`https://kitsu.io/anime/${title}/`);
 
@@ -60,7 +65,12 @@ const get_anime_info = async (title) => {
 }
 
 const get_anime_schedule = async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args': [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
     const page = await browser.newPage();
     await page.goto(`https://www.dubbedanime.vip/schedule`);
 
@@ -93,7 +103,12 @@ const get_anime_schedule = async () => {
 }
 
 const get_latest = async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args': [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
     const page = await browser.newPage();
     await page.goto(`https://pantsubase.tv/`);
 
