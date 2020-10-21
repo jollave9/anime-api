@@ -128,8 +128,10 @@ const get_latest = async () => {
 
 app.get('/', (req, res) => {
     res.json({
-        current_route_available: {
-            anime_info: `${host}/anime/:title`
+        current_routes_available: {
+            anime_info: `${host}/anime/slug/:title`,
+            anime_schedule: `${host}/anime/schedule`,
+            latest: `${host}/anime/latest`
         }
     })
 })
